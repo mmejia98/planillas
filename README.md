@@ -1,1 +1,4 @@
-# anf project
+# Planillas
+- PHP
+- MySql
+- JavaScript

@@ -56,6 +56,6 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email'])) {
                 </div>
             </nav>
             <!-- Page content-->
-            <div class="container-fluid fondo">
+            <div class="container-fluid fondo ">
                 <h1 class="mt-4"><?php echo (isset($_SESSION["Titulo"])) ? $_SESSION["Titulo"] : "Mantenimiento"; ?></h1>
                 

@@ -1,11 +1,13 @@
 <div class="border-end bg-white" id="sidebar-wrapper">
     <div class="sidebar-heading border-bottom bg-light">
-        <div class="container-fluid" style="background-color:#f8f9fa;">
+    <div class="container-fluid d-flex justify-content-center align-items-center" style="background-color: #f8f9fa; padding: 15px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <a class="nav-link mr-3" style="color: black; text-decoration: none;" href="../home/index.php">
+        <img src="../assets/pizzalogo.png" class="img-fluid" alt="Alessandro's pizzas" style="height: 70px;">
+    </a>
+    <span style="font-size: 24px; font-weight: bold;">Alessandro's pizzas</span>
+</div>
 
-            <a class="nav-link" style="color:black;" href="../home/index.php">
-                <img src="../assets/_logo.jpeg" class="img-fluid" alt="Responsive image" style="height: 50px;">
-                PC Service & Solutions, S.A. de C.V</a>
-        </div>
+
     </div>
     <div class="list-group list-group-flush">
         <?php

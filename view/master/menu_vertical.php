@@ -7,7 +7,7 @@
             <span style="font-size: 24px; font-weight: bold;">Alessandro's pizzas</span>
         </div>
     </div>
-    <div class="list-group list-group-flush" id="sidebar-wrapper">
+    <div class="list-group list-group-flush">
         <?php
         if (isset($_SESSION['id_rol'])) {
             if ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '3' || $_SESSION['id_rol'] == '4') {

@@ -8,7 +8,7 @@
 ?>
         <div class="table-responsive">
             <table id="datos_usuario" class="table table-bordered table-striped">
-            <thead class="bg-success text-white">
+            <thead class="bg-drak text-white">
                     <tr>
                         <th>Id</th>
                         <th>Nombre</th>

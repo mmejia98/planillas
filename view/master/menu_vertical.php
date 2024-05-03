@@ -10,7 +10,7 @@
     <div class="list-group list-group-flush">
         <?php
         if (isset($_SESSION['id_rol'])) {
-            if ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '3' || $_SESSION['id_rol'] == '4') {
+            /*if ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '3' || $_SESSION['id_rol'] == '4') {
                 echo '<a class="list-group-item list-group-item-action list-group-item-light p-3" href="../empleados/index.php"><i class="fas fa-user-tie"></i> Empleados</a>';
             }
             /*
@@ -27,6 +27,9 @@
             if ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '4') {
                 echo '<a class="list-group-item list-group-item-action list-group-item-light p-3" href="../usuarios/index.php"><i class="fas fa-user"></i> Usuarios</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../roles/index.php"><i class="fas fa-lock-open"></i> Roles</a>';
+            }
+            if ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '3' || $_SESSION['id_rol'] == '4') {
+                echo '<a class="list-group-item list-group-item-action list-group-item-light p-3" href="../departamentos/index.php"><i class="fas fa-people-group"></i> Departamentos</a>';
             }
         }
         ?>

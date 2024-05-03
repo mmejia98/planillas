@@ -20,7 +20,7 @@
         <br />
         <div class="table-responsive">
             <table id="datos_usuario" class="table table-bordered table-striped">
-            <thead class="bg-drak text-white">
+            <thead class="bg-dark text-white">
                     <tr>
                         <th>Id</th>
                         <th>Nombres</th>

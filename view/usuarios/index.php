@@ -18,10 +18,10 @@
         </div>
         <br />
         <br />
-
         <div class="table-responsive">
             <table id="datos_usuario" class="table table-bordered table-striped">
-                <thead>
+            <thead class="bg-success text-white">
+                    
                     <tr>
                         <th>Id</th>
                         <th>Nombres</th>

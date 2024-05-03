@@ -1,22 +1,22 @@
-
-            </div>
-            <footer class="bg-light text-center text-white">
-                <!-- Grid container -->
-                <div class="container p-4 pb-0">
-                    <!-- Section: Social media -->
+</div>
+            <footer class="bg-success text-white mt-5 text-center">
+                <div class="container p-4">
                     <section class="mb-4">
-                    
-                    </section>
-                    <!-- Section: Social media -->
-                </div>
-                <!-- Grid container -->
-
-                <!-- Copyright -->
-                <div class="text-center p-3" style="background-color: #666e75;">
-                
+                        <!-- Section heading-->
+                        <h2 class="text-uppercase">Redes Sociales</h2>
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                   <br>
+                   <br>
                     <a class="text-white" href="https://servicesolutions.com/">https://Grupo01-Grupo03-RHU.com</a> © Copyright -  2024
-                </div>
-            <!-- Copyright -->
+              
+                    </section>
             </footer>
         </div>
         <!-- Bootstrap core JS-->
@@ -25,3 +25,4 @@
         <script src="../js/scripts.js"></script>
     </body>
 </html>
+

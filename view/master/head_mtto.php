@@ -16,9 +16,9 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title><?php echo (isset($_SESSION["Titulo"])) ? $_SESSION["Titulo"] . " - PC Service & Solutions, S.A. de C.V" : "Mantenimiento"; ?></title>
+    <title><?php echo (isset($_SESSION["Titulo"])) ? $_SESSION["Titulo"] . " -RHU115 GP03" : "Mantenimiento"; ?></title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/pizzalogo.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../css/styles.css" rel="stylesheet" />
 
@@ -35,13 +35,14 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </head>
 <body>
+    
     <div class="d-flex" id="wrapper">
         <!-- Sidebar-->
         <?php include("menu_vertical.php") ?>
         <!-- Page content wrapper-->
         <div id="page-content-wrapper">
             <!-- Top navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <nav class="navbar navbar-expand-lg navbar-light bg-success border-bottom">
                 <div class="container-fluid">
                     <!-- <button class="btn btn-primary" id="sidebarToggle">Mostrar/Ocultar Menu</button> -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
@@ -49,8 +50,8 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email'])) {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                             <!--<li class="nav-item active"><a class="nav-link" href="../home/index.php">Inicio</a></li>-->
-                            <li class="nav-item active"><a class="nav-link" href="#!">Usuario: <?php echo (isset($_SESSION) && isset($_SESSION['nombres'])) ? $_SESSION['nombres'] : 'usuario'; ?>&nbsp;</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../../logout.php">|&nbsp;&nbsp;&nbsp;Logout</a></li>
+                            <li class="nav-item active"><a class="nav-link text-white" href="#!">Usuario: <?php echo (isset($_SESSION) && isset($_SESSION['nombres'])) ? $_SESSION['nombres'] : 'usuario'; ?>&nbsp;</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="../../logout.php">|&nbsp;&nbsp;&nbsp;Logout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -58,4 +59,5 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['email'])) {
             <!-- Page content-->
             <div class="container-fluid fondo ">
                 <h1 class="mt-4"><?php echo (isset($_SESSION["Titulo"])) ? $_SESSION["Titulo"] : "Mantenimiento"; ?></h1>
-                
+
+             

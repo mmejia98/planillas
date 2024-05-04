@@ -230,6 +230,13 @@
                         success:function(data)
                         {
                             //alert(data);
+                            Swal.fire({
+                                position: "center",
+                                icon: "success",
+                                title: "Operación realizada",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
                             $('#formulario')[0].reset();
                             $('#modalUsuario').modal('hide');
                             dataTable.ajax.reload();
@@ -275,23 +282,33 @@
             //Funcionalida de borrar
             $(document).on('click', '.borrar', function(){
                 var id_usuario = $(this).attr("id");
-                if(confirm("Esta seguro de borrar este registro:" + id_usuario))
-                {
-                    $.ajax({
-                        url:"../../controller/usuarios/borrar.php",
-                        method:"POST",
-                        data:{id_usuario:id_usuario},
-                        success:function(data)
-                        {
-                            alert(data);
-                            dataTable.ajax.reload();
-                        }
-                    });
-                }
-                else
-                {
-                    return false;	
-                }
+                Swal.fire({
+                    title: "¿Desea eliminar el registro?",
+                    text: "Esta operación no podra revertirse!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                            url:"../../controller/usuarios/borrar.php",
+                            method:"POST",
+                            data:{id_usuario:id_usuario},
+                            success:function(data)
+                            {
+                                //alert(data);
+                                Swal.fire({
+                                    title: "Eliminado!",
+                                    text: "Operación realizada",
+                                    icon: "success"
+                                });
+                                dataTable.ajax.reload();
+                            }
+                        });
+                    }
+                });
             });
 
         });         

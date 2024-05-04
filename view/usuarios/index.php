@@ -89,8 +89,8 @@
                     </select>
                     <br />
                 
-                    <label for="id_empleado">Seleccione el empleado:&nbsp;</label>
-                    <select class="form-select" name="id_empleado" id="id_empleado">
+                    <label for="id_empleado" class = "d-none">Seleccione el empleado:&nbsp;</label>
+                    <select class="form-select d-none" name="id_empleado" id="id_empleado">
                         <option value="0">Elija un empleado...</option>
                         <?php 
                         include_once("../../model/conexion.php");

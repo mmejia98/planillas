@@ -10,7 +10,7 @@
             <div class="col-2 offset-10">
                 <div class="text-center">
                     <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-outline-secondary w-100" data-bs-toggle="modal" data-bs-target="#modalUsuario" id="botonCrear">
+                        <button type="button" class="btn btn-outline-secondary w-100" id="botonCrear">
                         <i class="bi bi-plus-circle-fill"></i> Crear
                         </button>
                 </div>
@@ -70,7 +70,7 @@
 
                     <label for="id_rol">Seleccione el rol:&nbsp;</label>
                     <select class="form-select" name="id_rol" id="id_rol">
-                        <option value="0">Elija un rol...</option>
+                        <option value="">Elija un rol...</option>
                         <?php 
                         include_once("../../model/conexion.php");
                         $query = "SELECT id_rol, nombre FROM roles where estado = 'A' ";
@@ -88,9 +88,9 @@
                         ?>
                     </select>
                     <br />
-
-                    <label for="id_empleado">Seleccione el empleado:&nbsp;</label>
-                    <select class="form-select" name="id_empleado" id="id_empleado">
+                
+                    <label for="id_empleado" class = "d-none">Seleccione el empleado:&nbsp;</label>
+                    <select class="form-select d-none" name="id_empleado" id="id_empleado">
                         <option value="0">Elija un empleado...</option>
                         <?php 
                         include_once("../../model/conexion.php");
@@ -140,7 +140,23 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
+
+            $("#formulario").validate({
+                debug: false,
+                rules: {
+                    nombres: { required: true },
+                    apellidos: { required: true },
+                    email: { required: true },
+                    password: { required: true },
+                    id_rol: { required: true }
+                },
+                submitHandler: function(form) {
+                    $(form).submit();
+                }
+            })
+
             $("#botonCrear").click(function(){
+                $("#modalUsuario").modal('show');
                 $("#formulario")[0].reset();
                 $(".modal-title").text("Crear Usuario");
                 $("#action").val("Crear");
@@ -192,7 +208,7 @@
             var email = $('#email').val();
             var password = $('#password').val();
             var id_rol = $('#id_rol').val();
-            var id_empleado = $('#id_empleado').val();            
+            var id_empleado = $('#id_empleado').val();           
             var extension = $('#imagen_usuario').val().split('.').pop().toLowerCase();
             if(extension != '')
             {
@@ -213,7 +229,14 @@
                         processData:false,
                         success:function(data)
                         {
-                            alert(data);
+                            //alert(data);
+                            Swal.fire({
+                                position: "center",
+                                icon: "success",
+                                title: "Operación realizada",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
                             $('#formulario')[0].reset();
                             $('#modalUsuario').modal('hide');
                             dataTable.ajax.reload();
@@ -236,7 +259,7 @@
                 dataType:"json",
                 success:function(data)
                     {
-                        console.log(data);				
+                        //console.log(data);				
                         $('#modalUsuario').modal('show');
                         $('#nombres').val(data.nombres);
                         $('#apellidos').val(data.apellidos);
@@ -259,23 +282,33 @@
             //Funcionalida de borrar
             $(document).on('click', '.borrar', function(){
                 var id_usuario = $(this).attr("id");
-                if(confirm("Esta seguro de borrar este registro:" + id_usuario))
-                {
-                    $.ajax({
-                        url:"../../controller/usuarios/borrar.php",
-                        method:"POST",
-                        data:{id_usuario:id_usuario},
-                        success:function(data)
-                        {
-                            alert(data);
-                            dataTable.ajax.reload();
-                        }
-                    });
-                }
-                else
-                {
-                    return false;	
-                }
+                Swal.fire({
+                    title: "¿Desea eliminar el registro?",
+                    text: "Esta operación no podra revertirse!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                            url:"../../controller/usuarios/borrar.php",
+                            method:"POST",
+                            data:{id_usuario:id_usuario},
+                            success:function(data)
+                            {
+                                //alert(data);
+                                Swal.fire({
+                                    title: "Eliminado!",
+                                    text: "Operación realizada",
+                                    icon: "success"
+                                });
+                                dataTable.ajax.reload();
+                            }
+                        });
+                    }
+                });
             });
 
         });         

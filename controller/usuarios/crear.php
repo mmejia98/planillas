@@ -9,7 +9,10 @@ if ($_POST["operacion"] == "Crear") {
         $imagen = subir_imagen();
     }
     $stmt = $conexion->prepare("INSERT INTO usuarios(nombres, apellidos, email, password, id_rol, imagen, id_empleado)VALUES(:nombres, :apellidos, :email, :password, :id_rol, :imagen, :id_empleado)");
-
+    $id_empleado = null;
+    if($_POST["id_empleado"] != 0){
+        $id_empleado = $_POST["id_empleado"];    
+    }
     $resultado = $stmt->execute(
         array(
             ':nombres'    => $_POST["nombres"],
@@ -18,7 +21,7 @@ if ($_POST["operacion"] == "Crear") {
             ':password'    => $_POST["password"],
             ':id_rol'    => $_POST["id_rol"],
             ':imagen'    => $imagen,            
-            ':id_empleado'    => $_POST["id_empleado"]
+            ':id_empleado'    => $id_empleado
 
         )
     );

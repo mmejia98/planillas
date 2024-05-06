@@ -10,7 +10,7 @@
     <div class="list-group list-group-flush">
         <?php
         if (isset($_SESSION['id_rol'])) {
-            /*if ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '3' || $_SESSION['id_rol'] == '4') {
+            if ($_SESSION['id_rol'] == '1' || $_SESSION['id_rol'] == '3' || $_SESSION['id_rol'] == '4') {
                 echo '<a class="list-group-item list-group-item-action list-group-item-light p-3" href="../empleados/index.php"><i class="fas fa-user-tie"></i> Empleados</a>';
             }
             /*

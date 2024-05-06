@@ -1,11 +1,21 @@
 <?php
     if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
         session_start();
-        $_SESSION["Titulo"] = "Roles";
+        $_SESSION["Titulo"] = "Roles de asignacion";
     }
 
     require_once("../master/head_mtto.php")
 ?>
+      
+      <div class="row">
+            <div class="col-2 offset-10">
+                <div class="text-center">
+                    <!-- Button trigger modal -->
+                    <button id="botonCrear" class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#modalUsuario"><i class="bi bi-plus-circle-fill"></i>  Crear Usuario</button>
+                </div>
+            </div>
+        </div>
+        <br />
         <div class="table-responsive">
             <table id="datos_usuario" class="table table-bordered table-striped">
             <thead class="bg-dark text-white">
@@ -22,7 +32,7 @@
    
 
 
-<!-- Modal -->
+<<!-- Modal -->
 <div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -30,40 +40,33 @@
         <h5 class="modal-title" id="exampleModalLabel">Crear Rol</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-     
-        <form method="POST" id="formulario" enctype="multipart/form-data">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <label for="nombre">Ingrese el nombre:</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control">
-                    <br />
-
-                    <label for="estado">Seleccione el estado:&nbsp;</label>
-                    <!--<input type="text" name="estado" id="estado" class="form-control">-->
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="estado" id="inlineRadio1" value="A" checked>
-                        <label class="form-check-label" for="estado1">Activo</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="estado" id="inlineRadio2" value="I">
-                        <label class="form-check-label" for="estado2">Inactivo</label>
-                    </div>
-                    <br />
-                </div>
-
-                <div class="modal-footer">
-                    <input type="hidden" name="id_rol" id="id_rol">
-                    <input type="hidden" name="operacion" id="operacion">             
-                    <input type="submit" name="action" id="action" class="btn btn-success" value="Crear">
-                </div>
-            </div>
-        </form>
-      </div>     
+      <form method="POST" id="formulario" enctype="multipart/form-data">
+        <div class="modal-body">
+          <label for="nombre">Ingrese el nombre:</label>
+          <input type="text" name="nombre" id="nombre" class="form-control">
+          <br />
+          <label for="estado">Seleccione el estado:&nbsp;</label>
+          <!--<input type="text" name="estado" id="estado" class="form-control">-->
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="estado" id="inlineRadio1" value="A" checked>
+            <label class="form-check-label" for="estado1">Activo</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="estado" id="inlineRadio2" value="I">
+            <label class="form-check-label" for="estado2">Inactivo</label>
+          </div>
+          <br />
+        </div>
+        <div class="modal-footer">
+          <input type="hidden" name="id_rol" id="id_rol">
+          <input type="hidden" name="operacion" id="operacion">             
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <input type="submit" name="action" id="action" class="btn btn-success" value="Crear">
+        </div>
+      </form>
+    </div>     
   </div>
 </div>
-
-    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 

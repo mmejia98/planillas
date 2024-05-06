@@ -11,7 +11,7 @@
             <div class="col-2 offset-10">
                 <div class="text-center">
                     <!-- Button trigger modal -->
-                    <button id="botonCrear" class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#modalUsuario"><i class="bi bi-plus-circle-fill"></i>  Crear Usuario</button>
+                    <button id="botonCrear" class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#modalUsuario"><i class="bi bi-plus-circle-fill"></i>  Crear rol de usuario</button>
                 </div>
             </div>
         </div>
@@ -21,9 +21,9 @@
             <thead class="bg-dark text-white">
                     <tr>
                         <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Estado</th>
-                        <th>Editar</th>
+                        <th>Nombre del rol</th>
+                        <th>Estado del rol</th>
+                        <th>Editar </th>
                         <th>Borrar</th>
                     </tr>
                 </thead>
